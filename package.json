@@ -1,0 +1,11 @@
+{
+  "name": "BedrockCSS",
+  "version": "1.0.0",
+  "description": "Always inheriting the user’s preferred font size. The one they choose in their browser or on their system. Even if they did not explicitly choose one (because the default was maybe good enough).",
+  "keywords": ["css", "font-size", "responsive", "web-design"],
+  "author": "timescam",
+  "license": "CC-BY-SA-4.0",
+  "devDependencies": {
+    "css-minify": "^2.0.0"
+  }
+}

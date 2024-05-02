@@ -1,0 +1,192 @@
+/* Font */
+html {
+	font: -apple-system-body;
+	font-size: 100%;
+}
+
+/* https://adrianroselli.com/2024/03/the-ultimate-ideal-bestest-base-font-size-that-everyone-is-keeping-a-secret-especially-chet.html#comment-283137 */
+@supports (font: -apple-system-body) and (not (-webkit-touch-callout: default)) {
+	:root {
+		font-size: 100%;
+	}
+}
+/* End of font */
+
+/* Forms */
+button {
+	font: inherit;
+}
+
+select {
+	/*  the bare minimum  */
+	font: inherit;
+	letter-spacing: inherit;
+	word-spacing: inherit;
+	/*  from Filament  */
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+	/*  match my text boxen styles  */
+	border: 0.1em solid;
+	padding: 0 0.2em;
+}
+
+select:not([multiple]) {
+	/*  mine again  */
+	padding-right: 1.2em;
+	background-repeat: no-repeat;
+	background-position: calc(100% - 0.25em) 0.35em;
+	background-size: 0.85em auto;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Cpath d='M70.3 13.8L40 66.3 9.7 13.8z' fill='%23000'%3E%3C/path%3E%3C/svg%3E");
+}
+
+/* Filament: Hide arrow icon in IE browsers */
+select::-ms-expand {
+	display: none;
+}
+
+textarea,
+input {
+	font: inherit;
+	letter-spacing: inherit;
+	word-spacing: inherit;
+	border: 0.1em solid;
+	border-color: inherit;
+	padding: 0 0.2em;
+}
+
+/* Focused */
+textarea:focus,
+input:not([type="checkbox"]):not([type="file"]):not([type="image"]):not(
+		[type="radio"]
+	):not([type="range"]):focus {
+	outline: 0.15em solid #00f;
+	box-shadow: 0 0 0.2em #00f;
+}
+select:focus {
+	outline: 0.15em solid #00f;
+	box-shadow: 0 0 0.2em #00f;
+}
+
+/* Read-Only */
+textarea[readonly],
+input:not([type="checkbox"]):not([type="file"]):not([type="image"]):not(
+		[type="radio"]
+	):not([type="range"])[readonly] {
+	border-color: rgba(0, 0, 0, 0.42);
+	border-left: none;
+	border-top: none;
+	border-right: none;
+}
+
+/* Required */
+textarea[required],
+input:not([type="checkbox"]):not([type="file"]):not([type="image"]):not(
+		[type="radio"]
+	):not([type="range"])[required] {
+	border-left-width: 0.3em;
+}
+select[required] {
+	border-left-width: 0.3em;
+}
+
+/* Errored */
+textarea[aria-invalid="true"],
+textarea[aria-invalid="spelling"],
+textarea[aria-invalid="grammar"],
+input:not([type="checkbox"]):not([type="file"]):not([type="image"]):not(
+		[type="radio"]
+	):not([type="range"])[aria-invalid] {
+	background: linear-gradient(
+		135deg,
+		rgba(255, 0, 0, 1) 0,
+		rgba(255, 0, 0, 1) 0.4em,
+		rgba(255, 255, 255, 1) 0.4em
+	);
+}
+select[aria-invalid] {
+	background: linear-gradient(
+		135deg,
+		rgba(255, 0, 0, 1) 0,
+		rgba(255, 0, 0, 1) 0.4em,
+		rgba(255, 255, 255, 0) 0.4em
+	);
+}
+
+select[aria-invalid]:not([multiple]) {
+	background-repeat: no-repeat, no-repeat;
+	background-position: 0 0, calc(100% - 0.25em) 0.35em;
+	background-size: 0.85em auto;
+	background-image: linear-gradient(
+			135deg,
+			rgba(255, 0, 0, 1) 0,
+			rgba(255, 0, 0, 1) 0.4em,
+			rgba(255, 255, 255, 0) 0.4em
+		),
+		url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Cpath d='M70.3 13.8L40 66.3 9.7 13.8z' fill='%23000'%3E%3C/path%3E%3C/svg%3E");
+}
+
+/* Dark Mode */
+@media screen and (prefers-color-scheme: dark) {
+	textarea,
+	input:not([type="checkbox"]):not([type="file"]):not([type="image"]):not(
+			[type="radio"]
+		):not([type="range"]) {
+		background-color: transparent;
+		color: inherit;
+		border-color: #f8f8f2;
+	}
+	textarea:focus,
+	input:not([type="checkbox"]):not([type="file"]):not([type="image"]):not(
+			[type="radio"]
+		):not([type="range"]):focus {
+		outline-color: #8be9fd;
+		box-shadow: 0 0 0.2em #8be9fd;
+	}
+	textarea:disabled,
+	input:not([type="checkbox"]):not([type="file"]):not([type="image"]):not(
+			[type="radio"]
+		):not([type="range"]):disabled {
+		border-color: rgba(98, 114, 164, 0.3);
+		color: rgba(98, 114, 164, 0.3);
+		background-color: rgba(98, 114, 164, 0.1);
+	}
+	textarea[readonly],
+	input:not([type="checkbox"]):not([type="file"]):not([type="image"]):not(
+			[type="radio"]
+		):not([type="range"])[readonly] {
+		border-color: #44475a;
+	}
+	textarea[aria-invalid],
+	input:not([type="checkbox"]):not([type="file"]):not([type="image"]):not(
+			[type="radio"]
+		):not([type="range"])[aria-invalid] {
+		background: linear-gradient(
+			135deg,
+			rgba(255, 85, 85, 1) 0,
+			rgba(255, 85, 85, 1) 0.3em,
+			rgba(0, 0, 0, 0) 0.3em
+		);
+	}
+	*[dir="rtl"] textarea[aria-invalid],
+	*[dir="rtl"]
+		input:not([type="checkbox"]):not([type="file"]):not([type="image"]):not(
+			[type="radio"]
+		):not([type="range"])[aria-invalid] {
+		background: linear-gradient(
+			225deg,
+			rgba(255, 85, 85, 1) 0,
+			rgba(255, 85, 85, 1) 0.3em,
+			rgba(0, 0, 0, 0) 0.3em
+		);
+	}
+}
+/* End of forms */
+
+/* Print */
+@media print {
+	body {
+		font-size: 8pt;
+	}
+}
+/* End of print */
