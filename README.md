@@ -10,6 +10,10 @@ To use BedrockCSS, simply include the `bedrock.min.css` file in your HTML docume
 <link rel="stylesheet" href="path/to/bedrock.min.css" />
 ```
 
+## TODO
+
+- [ ] Example page
+
 ## Licence
 
 BedrockCSS is licensed under the [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) license.
