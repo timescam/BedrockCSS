@@ -10,6 +10,12 @@ To use BedrockCSS, simply include the `bedrock.min.css` file in your HTML docume
 <link rel="stylesheet" href="path/to/bedrock.min.css" />
 ```
 
+Or use Github Pages as CDN source.
+
+```html
+<link rel="stylesheet" href="https://timescam.github.io/BedrockCSS/css-dist/bedrock.min.css" />
+```
+
 ## TODO
 
 - [ ] Example page
